@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #demo{
+            border: 2px solid black;
+            height: 120px;
+            width: 200px;
+
+        }   
+        #img1{
+            height: 100px;
+            width: 200px;
+            
+        } */
+
+
+    </style>
+</head>
+<body>
+    <!-- <p id="demo">Hello World</p>
+    <p>Hello world1</p>
+    <p>Hello world2</p>
+    <p>Hello world3</p>
+    <p class="para">Hello world4</p>    
+    <p class="para">Hello world5</p>
+    <img id="img1" src="img1.jpg">
+    <div id="div1"></div> -->
+
+    <script>
+        // document.getElementById("demo").innerHTML="<h1>This is javascript class</h1>"
+            
+        // document.getElementById("demo").innerText="<h1>This is javascript class</h1>"//we cannot use any tags inside this innertext that is the diff innerHTml and innerText
+        // var text=document.getElementsByTagName("p")//change in group
+        // for(let i=0;i<text.length;i++){
+        //     text[i].innerHTML="para changed tag name"
+        // }
+
+        // var text1=document.getElementsByClassName("para")
+        // for(let i=0;i<text1.length;i++){
+        //     text1[i].innerHTML="text changed this classname"
+        // }
+
+        // var text2=document.querySelector("p")//only first line changed
+        // for(let i=0;i<text2.length;i++){
+        //     text2[i].innerHTML="text changed query selector"
+        // }
+        
+
+
+        // var text3=document.querySelectorAll("p")//all line changed
+        // for(let i=0;i<text3.length;i++){
+        //     text3[i].innerHTML="text changed query selector"
+        // }
+        // document.getElementById("img1").src="img2.jpg"
+
+        // document.getElementById("div1").style.backgroundColor="green"
+        // document.getElementById("div1").style.height="453px"
+        // document.getElementById("div1").style.width="453px"
+
+        var div1=document.createElement("div")
+        var para1=document.createElement("p")
+        para1.textContent="this javascriptl class"
+        document.body.append(div1)
+        div1.append(para1)
+        var button=document.createElement("button")
+        button.textContent="Click button"
+        div1.append(para1,button)
+
+        var img1=document.createElement("img")
+        img1.setAttribute("src","img1.jpg")
+        div1.appendChild(img1)
+        div1.removeChild(para1)
+    </script>
+    
+</body>
+</html>

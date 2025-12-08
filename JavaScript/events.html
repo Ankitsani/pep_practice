@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+        
+
+
+
+    </div>
+    <button onclick="clicked()">Click</button>
+    <button id="b1">Click dom</button>
+    <button ondblclick="clicked3()">DBL</button>
+    <button id="b2">DBLclickdom</button>
+    <button id="b3">Context DOM</button>
+    <input type="text" id="i1" onkeypress="press1()"><br>
+    <input type="text" id="i2" onkeydown="press2()"><br>
+    <input type="text" id="i3" onkeyup="press3()"><br>
+    <form onsubmit="send1()" onreset="reset1()">
+        <input type="text" placeholder="enter anythings" id="id1" onblur="changec('red')"><br>
+        <input type="text" placeholder="enter somethings" id="id2" onfocus="changec1('blue')"><br>
+        <input type="reset" value="reset">
+        <input type="submit" value="submit">
+    </form> 
+
+    <script>
+        function clicked() {
+            alert("Welcome user");
+        }
+
+        document.getElementById("b1").addEventListener('click', function () {
+            clicked3();
+        });
+
+        function clicked3() {
+            alert("Welcome dom");
+        }
+
+        function clicked4() {
+            alert("Double clicked");
+        }
+
+        document.getElementById("b2").addEventListener('dblclick', function () {
+            clicked4();
+        });
+
+        document.getElementById("b3").addEventListener('contextmenu', function () {
+            add(2, 3);
+        });
+
+        function add(a, b) {
+            alert(a + b);
+        }
+        document.getElementById("div1").addEventListener('mousedown', function(){
+            change('green')
+        })
+        function change(ele){
+            document.getElementById("div1").style.backgroundColor=ele
+        }
+        document.getElementById("div1").addEventListener('mouseup', function(){
+            change('red')
+        })
+        document.getElementById("div1").addEventListener('mouseenter', function(){
+            change('blue')
+        })
+        document.getElementById("div1").addEventListener('mouseleave', function(){
+            change('yellow')
+        })
+        document.getElementById("div1").addEventListener('mousemove',function(){coords(event)})
+        function coords(ele){
+            var x=ele.clientX
+            var y=ele.clientY
+            result=`x coords are ${x} and Y coords are ${y}`
+            document.getElementById("div1").innerHTML=result
+        }
+        function press1(){
+            alert("key press")
+        }
+        function press1(){
+            alert("key down")
+        }
+        function press1(){
+            alert("key up")
+        }
+        function changec(ele){
+            document.getElementById("id1").style.backgroundColor=ele
+        }
+        function changec1(ele){
+            document.getElementById("id2").style.backgroundColor=ele
+        }
+        function send1(){
+            alert("form submitted")
+        }
+        function reset1(){
+            alert("forms has reset")
+        }
+
+    </script>
+</body>
+</html>

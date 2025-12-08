@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var div1=document.createElement("div");
+        var h1 = document.createElement("h1");
+h1.textContent = "Multiplication Table";
+var table = document.createElement("table");
+// table.border = "1";
+var tr = document.createElement("tr");
+var th1 = document.createElement("th");
+th1.textContent = "Multiplication";
+var th2 = document.createElement("th");
+th2.textContent = "Result";
+tr.append(th1, th2);
+table.append(tr);
+for (var i = 1; i <= 10; i++) {
+    var row = document.createElement("tr");
+    var td1 = document.createElement("td");
+    td1.textContent = 2 x ${i};
+    var td2 = document.createElement("td");
+    td2.textContent = 2 * i;
+    row.append(td1, td2);
+    table.append(row);
+}
+
+div1.append(h1, table);
+document.body.append(div1);
+    </script>
+    
+</body>
+</html>
